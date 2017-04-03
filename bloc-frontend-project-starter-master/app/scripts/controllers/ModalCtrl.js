@@ -1,18 +1,19 @@
 (function() {
     function ModalCtrl(Room, $uibModalInstance) {
         this.cancel = function() {
+            //Room.add('yo');
             $uibModalInstance.dismiss();
         };
         
-        this.submit = function() {
-            Room.add(this.newRoom);
-            $uibModalInstance.close();
+        this.createRoom = function(newRoom) {
+            Room.newRoom(newRoom);
+            $uibModalInstance.dismiss();
         };
         
-        this.createUsername = function() {
-            $cookies.put('blocChatCurrentUser', modal.username);
-            $uibModalInstance.close();
-        }
+//        this.createUsername = function() {
+//            $cookies.put('blocChatCurrentUser', modal.username);
+//            $uibModalInstance.close();
+//        }
     }
     
     angular
